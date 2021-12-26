@@ -4,20 +4,29 @@ console.log(rightNow);
 var currentTime = moment().format("hh:mm A")
 console.log(currentTime)
 
+var Time = moment().hour()
+console.log(Time)
+
 // anytime the time block is clicked, have the form become editable
 $(".textarea").on("click", function(){
     var text = $(this)
     .text()
     .trim();
-    console.log(text)
-
+    // create editable textarea
     var textInput = $("<textarea>")
     .addClass("form-control")
     .val(text)
 
     $(this).replaceWith(textInput)
-    // textInput.trigger("focus")
+    textInput.trigger("focus")
 })
+
+$(".saveBtn").on("click", function() {
+    var text = $(".textarea")
+    .val()
+    .trim();
+    console.log(text)
+});
 
 // function to create a time block
 
