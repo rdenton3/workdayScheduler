@@ -35,33 +35,43 @@ var colorCode = function() {
 }
 
 colorCode();
+// periodically run color code function to check time
+setInterval(colorCode, 60000);
 
-var Time = moment().hour()
-console.log(Time)
+// anytime the time block is clicked, have the form become editable and in focus
+// $(".textarea").on("click", function(){
+//     var text = $(this)
+//     .text()
+//     .trim();
+//     // create editable textarea
+//     var textInput = $("<textarea>")
+//     .addClass("form-control")
+//     .val(text)
 
-// anytime the time block is clicked, have the form become editable
-$(".textarea").on("click", function(){
-    var text = $(this)
-    .text()
-    .trim();
-    // create editable textarea
-    var textInput = $("<textarea>")
-    .addClass("form-control")
-    .val(text)
+//     $(this).replaceWith(textInput)
+//     textInput.trigger("focus")
+// })
 
-    $(this).replaceWith(textInput)
-    textInput.trigger("focus")
-})
+// when save button is clicked, save to local storage
+$(".saveBtn").on("click", function(event) {
+    var text = $(this).siblings(".description").val();
+    var timeID = $(this).parent().attr("id")
 
-$(".saveBtn").on("click", function() {
-    var text = $(".textarea")
-    .val()
-    .trim();
-    console.log(text)
+    localStorage.setItem(timeID, text);
 });
 
-// function to create a time block
+// load content from local storage
+$("#9 .description").val(localStorage.getItem("9"))
+$("#10 .description").val(localStorage.getItem("10"))
+$("#11 .description").val(localStorage.getItem("11"))
+$("#12 .description").val(localStorage.getItem("12"))
+$("#13 .description").val(localStorage.getItem("13"))
+$("#14 .description").val(localStorage.getItem("14"))
+$("#15 .description").val(localStorage.getItem("15"))
+$("#16 .description").val(localStorage.getItem("16"))
+$("#17 .description").val(localStorage.getItem("17"))
+$("#18 .description").val(localStorage.getItem("18"))
+$("#19 .description").val(localStorage.getItem("19"))
+$("#20 .description").val(localStorage.getItem("20"))
+$("#21 .description").val(localStorage.getItem("21"))
 
-// function that checks if time of the time block is past or present to current time
-
-// function to create form and take text from user 
