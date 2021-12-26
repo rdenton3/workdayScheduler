@@ -30,14 +30,15 @@ textarea{
   border-radius: 15px;
 }
 
+/* where user is able to edit task */
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;;
 }
-
+/* 9AM 10AM etc. */
 .hour {
-  background-color: #ffffff;
+  background-color: white;
   color: #000000;
   border-top: 1px dashed #000000;
 }
@@ -69,3 +70,4 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
